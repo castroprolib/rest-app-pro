@@ -20,4 +20,25 @@ CREATE DATABASE "web-app-pro"
 
 -- creamos el schema
 CREATE SCHEMA dev
-    AUTHORIZATION dev;  	
+    AUTHORIZATION dev;
+
+-- agregando modulo identificador universal
+create extension "uuid-ossp";    
+
+-- creando tabla usuarios
+create table dev.users(
+id_user uuid primary key default  uuid_generate_v4(),
+first_name varchar(50) not null,
+last_name varchar(50) not null,
+email varchar(100) not null unique,
+password varchar(100) not null,	
+id_role serial,
+id_country integer not null,
+id_state integer not null,
+createt_at date default current_date,
+updated_at date not null,
+last_access timestamp not null				  
+); 
+
+-- creando index btree
+create index index_pass on dev.users(password);     	
