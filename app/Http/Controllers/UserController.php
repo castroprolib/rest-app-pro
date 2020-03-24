@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// usar el modelo
+use App\User;
+
 class UserController extends Controller
 {
     /**
@@ -36,7 +39,18 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-    }
+
+       $user = new User;
+
+       $user->first_name = $request->first_name;
+       $user->last_name = $request->last_name;
+       $user->email = $request->email;
+       $user->password = $request->password;
+       $user->country = $request->country;
+       $user->state = $request->state;
+
+       $user->save();
+   }
 
     /**
      * Display the specified resource.

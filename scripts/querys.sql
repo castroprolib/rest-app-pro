@@ -37,7 +37,7 @@ id_country integer not null,
 id_state integer not null,
 createt_at date not null default current_date,
 updated_at date not null default current_date,
-last_access timestamp not null				  
+last_access timestamp not null default current_timestamp				  
 ); 
 
 -- creando index btree
