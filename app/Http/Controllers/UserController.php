@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        echo "hola";
+        // echo "hola";
     }
 
     /**
@@ -28,6 +28,14 @@ class UserController extends Controller
     public function create()
     {
         //
+
+         $user = User::all();
+
+        // print_r($countrys);
+
+
+        return response()
+        ->json($user);
     }
 
     /**

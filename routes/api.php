@@ -17,7 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();    
 });
 
-Route::resource('register/user', 'UserController');
+// Route::resource('register/user', 'UserController');
+
+Route::post('register/user', 'UserController@store');
+
+Route::get('users', 'UserController@create');
 
 
 

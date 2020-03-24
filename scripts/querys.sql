@@ -46,3 +46,9 @@ create index index_pass on dev.users(password);
 -- eliminado la tabla users
 drop table dev.users;
 
+
+insert into dev.users(first_name,last_name,email,password,id_country,id_state)
+values('jose','pacheco','jose@hotmail.com','123',1,1);
+
+select * from dev.users;
+
