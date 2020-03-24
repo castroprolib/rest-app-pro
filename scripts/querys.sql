@@ -35,10 +35,14 @@ password varchar(100) not null,
 id_role serial,
 id_country integer not null,
 id_state integer not null,
-createt_at date default current_date,
-updated_at date not null,
+createt_at date not null default current_date,
+updated_at date not null default current_date,
 last_access timestamp not null				  
 ); 
 
 -- creando index btree
-create index index_pass on dev.users(password);     	
+create index index_pass on dev.users(password);
+
+-- eliminado la tabla users
+drop table dev.users;
+
