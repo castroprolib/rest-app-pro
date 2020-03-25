@@ -83,7 +83,7 @@ drop table dev.states,dev.capitals;
 insert into dev.countrys(country)
 values('Venezuela');
 
-
+-- los estados
 insert into dev.states(state)
 values('Amazonas'),
 ('Anzoategui'),
@@ -117,3 +117,31 @@ where id_country is null;
 ya despues si queremos actualizar o insertar la restriccion foranea
  no dejaria
 */
+
+-- las capitales
+select * from dev.capitals;
+insert into dev.capitals(capital)
+values('Puerto Ayacucho'),
+('Barcelona'),
+('San Fernando De Apure'),
+('Maracay'),
+('Barinas'),
+('Ciudad Bolivar'),
+('Valencia'),
+('San Carlos'),
+('Tucupita'),
+('Caracas'),
+('Coro'),
+('San Juan De Los Morros'),
+('Barquisimeto'),
+('Merida'),
+('Los Teques'),
+('Maturin'),
+('La Asuncion'),
+('Guanare'),
+('Cumana'),
+('San Cristobal'),
+('Trujillo'),
+('La Guaira'),
+('San Felipe'),
+('Maracaibo');
