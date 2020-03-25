@@ -52,3 +52,23 @@ values('jose','pacheco','jose@hotmail.com','123',1,1);
 
 select * from dev.users;
 
+-- tabla paises
+create table dev.countrys(
+id_country serial primary key,
+country varchar(50) not null unique
+);
+
+-- tabla estados
+create table dev.states(
+id_state serial primary key,
+state varchar(50) not null unique,
+id_country integer references dev.countrys(id_country)
+);
+
+-- tabla capitales
+create table dev.capitals(
+id_capital serial primary key,
+capital varchar(50) not null unique,
+id_state integer references dev.states(id_state)
+);
+

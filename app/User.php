@@ -13,6 +13,6 @@ class User extends Model
 {
 
 	// cuando la tabla no se llama igual que el modelo, colocarla de la siguiente forma
-	protected $table = "dev.users";
+	protected $table = "users";
 
 }
