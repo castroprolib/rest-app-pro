@@ -62,18 +62,29 @@ country varchar(50) not null unique
 create table dev.states(
 id_state serial primary key,
 state varchar(50) not null unique,
-id_country serial references dev.countrys(id_country)
+id_country integer references dev.countrys(id_country)
 );
 
 -- tabla capitales
+-- el tipo serial agrega not null por defecto
 create table dev.capitals(
 id_capital serial primary key,
 capital varchar(50) not null unique,
 id_state serial references dev.states(id_state)
 );
 
+--
+drop table dev.states cascade;
+
+--
+drop table dev.states,dev.capitals;
+
 
 insert into dev.countrys(country)
+values('Venezuela');
+
+
+insert into dev.states(state)
 values('Amazonas'),
 ('Anzoategui'),
 ('Apure'),
@@ -98,3 +109,11 @@ values('Amazonas'),
 ('La Guaira'),
 ('Yaracuy'),
 ('zulia');
+
+update dev.states set id_country = 1
+where id_country is null;
+
+/* al insertar registros como nulos no hay problemas,
+ya despues si queremos actualizar o insertar la restriccion foranea
+ no dejaria
+*/
