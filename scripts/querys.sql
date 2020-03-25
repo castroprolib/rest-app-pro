@@ -62,13 +62,39 @@ country varchar(50) not null unique
 create table dev.states(
 id_state serial primary key,
 state varchar(50) not null unique,
-id_country integer references dev.countrys(id_country)
+id_country serial references dev.countrys(id_country)
 );
 
 -- tabla capitales
 create table dev.capitals(
 id_capital serial primary key,
 capital varchar(50) not null unique,
-id_state integer references dev.states(id_state)
+id_state serial references dev.states(id_state)
 );
 
+
+insert into dev.countrys(country)
+values('Amazonas'),
+('Anzoategui'),
+('Apure'),
+('Aragua'),
+('Barinas'),
+('Bolivar'),
+('Carabobo'),
+('Cojedes'),
+('Delta Amacuro'),
+('Distrito Capital'),
+('Falcon'),
+('Guarico'),
+('Lara'),
+('Merida'),
+('Miranda'),
+('Monagas'),
+('Nueva Esparta'),
+('Portuguesa'),
+('Sucre'),
+('Tachira'),
+('Trujillo'),
+('La Guaira'),
+('Yaracuy'),
+('zulia');
