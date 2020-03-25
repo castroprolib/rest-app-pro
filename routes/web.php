@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::get('userss', 'UserController@index');
 
 Route::get('users', 'UserController@create');
+
+// Route::get('countrys', 'CountryController@create');
