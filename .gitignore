@@ -10,3 +10,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# ignorar para no tener problemas de versiones al actualizar
+composer.lock
+package-lock.json
